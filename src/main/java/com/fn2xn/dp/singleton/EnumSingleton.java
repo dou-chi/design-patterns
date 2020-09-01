@@ -7,6 +7,7 @@ package com.fn2xn.dp.singleton;
  */
 public enum EnumSingleton {
 
+    // 实例
     INSTANCE;
 
     public static void main(String[] args) {

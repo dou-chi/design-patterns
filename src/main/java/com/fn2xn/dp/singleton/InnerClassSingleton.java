@@ -15,7 +15,7 @@ public class InnerClassSingleton implements Serializable {
     private InnerClassSingleton(){};
 
     public static InnerClassSingleton getInstance(){
-        return instanceHolder.instance;
+        return InstanceHolder.instance;
     }
 
     /**
@@ -23,7 +23,7 @@ public class InnerClassSingleton implements Serializable {
      * JVM 类加载机制，当静态内部类使用到时，才会去初始化
      *
      */
-    private static class instanceHolder{
+    private static class InstanceHolder {
 
         private static InnerClassSingleton instance = new InnerClassSingleton();
 
@@ -35,7 +35,7 @@ public class InnerClassSingleton implements Serializable {
      * @throws ObjectStreamException
      */
     private Object readResolve() throws ObjectStreamException {
-        return instanceHolder.instance;
+        return InstanceHolder.instance;
     }
 
 
